@@ -32,7 +32,7 @@ async function onSearchPhoto(evt) {
     page = 1;
     loadMoreBtn.classList.replace('is-active', 'is-hidden');
   }
-  const query = evt.target.elements.searchQuery.value;
+  const query = evt.target.elements.searchQuery.value.trim();
   try {
     if (query === '') {
       Notify.warning('Please fill all fields');
@@ -57,7 +57,7 @@ async function onSearchPhoto(evt) {
 }
 
 async function onLoadMorePosts() {
-  const query = formEl.elements.searchQuery.value;
+  const query = formEl.elements.searchQuery.value.trim();
   try {
     page += 1;
     const photos = await getPosts(query, page, per_page);
