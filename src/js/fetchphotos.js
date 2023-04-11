@@ -2,7 +2,7 @@ const axios = require('axios').default;
 const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '35169134-caa93ad6ede5d1a85710c58b2';
 
-export const getPosts = async function getPosts(query, page, per_page) {
+export const getPhotos = async function getPhotos(query, page, per_page) {
   const params = {
     key: API_KEY,
     q: `${query}`,
