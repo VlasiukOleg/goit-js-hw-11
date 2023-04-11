@@ -1,0 +1,231 @@
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  width: 1200px;
+  padding: 0px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.gallery {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: 260px;
+  grid-gap: 12px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery__item {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.gallery__image:hover {
+  transform: scale(1.03);
+}
+
+.gallery__image {
+  height: 190px;
+  width: 100%;
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+// .gallery__link {
+//   display: block;
+//   text-decoration: none;
+//   height: 100%;
+// }
+
+.gallery__link:hover {
+  cursor: zoom-in;
+}
+
+.info {
+  padding-bottom: 10px;
+  font-size: 10px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.info__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.likes::before {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/like.png);
+  background-size: contain;
+}
+
+.views::before {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/eye.png);
+  background-size: contain;
+}
+
+.comments::before {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/comments.png);
+  background-size: contain;
+}
+
+.downloads::before {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/download.png);
+  background-size: contain;
+}
+
+.info__label {
+  font-weight: 700;
+}
+
+// ---------------Form----------------
+
+.form-wrapper {
+  padding: 10px;
+  background-color: rgb(242, 142, 142);
+  border-radius: 10px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form::before {
+  margin-right: 5px;
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-image: url(../images/search.png);
+  background-size: contain;
+}
+
+.search-form input {
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+  border: 0;
+  margin-right: 10px;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: rgb(103, 197, 229);
+  outline: none;
+  border: 0;
+  color: white;
+
+  cursor: pointer;
+
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.load-more {
+  display: blok;
+  margin: 0 auto;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.is-active {
+  display: block;
+}
+
+.load-more::before {
+  margin-right: 5px;
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/load.png);
+  background-size: contain;
+}
+
+.load-more::after {
+  margin-left: 5px;
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/load.png);
+  background-size: contain;
+}
+
+// ---------------Back - to - top -------------------------
+
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 18px;
+
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/up-arrow.png);
+  background-size: cover;
+  opacity: 0.7;
+  transition: opacity var(--animation-duration) var(--timing-function);
+}
+
+.back-to-top:hover {
+  opacity: 1;
+}
